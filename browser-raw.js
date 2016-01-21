@@ -78,7 +78,7 @@ function flush() {
 // have WebKitMutationObserver but not un-prefixed MutationObserver.
 // Must use `global` instead of `window` to work in both frames and web
 // workers. `global` is a provision of Browserify, Mr, Mrs, or Mop.
-var BrowserMutationObserver = global.MutationObserver || global.WebKitMutationObserver;
+var BrowserMutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 // MutationObservers are desirable because they have high priority and work
 // reliably everywhere they are implemented.
